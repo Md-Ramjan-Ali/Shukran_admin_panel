@@ -42,7 +42,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Dev-Ninjas-Backup/Shukran_admin_panel.git
+   git clone https://github.com/CodeForestLab/Shukran_admin_panel.git
    cd Shukran_admin_panel
    ```
 
