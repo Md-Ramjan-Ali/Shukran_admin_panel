@@ -76,9 +76,6 @@ export default function Navbar() {
             <span className="text-[11px] font-semibold text-text-primary tracking-tight">
               {formattedTime || "Sep 20, 2026, 1:43:19 PM"}
             </span>
-            <span className="text-[9px] text-text-muted mt-0.5">
-              Bangladesh Standard Time
-            </span>
           </div>
         </div>
 
