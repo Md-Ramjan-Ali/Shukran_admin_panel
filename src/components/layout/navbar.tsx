@@ -82,7 +82,9 @@ export default function Navbar() {
         {/* Greeting & Admin Avatar */}
         <div className="flex items-center gap-2.5 pl-2">
           <div className="hidden md:flex flex-col text-right leading-none">
-            <span className="text-[11px] text-text-secondary">Good Afternoon,</span>
+            <span className="text-[11px] text-text-secondary">
+              Good Afternoon,
+            </span>
             <span className="text-xs font-bold text-text-accent mt-0.5">
               Admin
             </span>
