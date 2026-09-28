@@ -44,12 +44,12 @@ export default function Navbar() {
         </button>
 
         {/* Search Bar */}
-        <div className="relative flex-1 max-w-md hidden sm:block">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted" />
+        <div className="relative flex w-full max-w-144.75 justify-center items-start sm:block">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted pointer-events-none" />
           <input
             type="text"
             placeholder="Search anything..."
-            className="w-full h-9 pl-9 pr-14 bg-surface-card border border-border-secondary rounded-xl text-xs text-text-primary placeholder:text-text-muted focus:outline-none focus:border-border-accent/50 transition-colors"
+            className="w-full pt-2 pb-2.25 pl-9 pr-14 bg-surface-card border border-border-secondary rounded-xl text-xs text-text-primary placeholder:text-text-muted focus:outline-none focus:border-border-accent/50 transition-colors"
           />
           <div className="absolute right-2 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-hover border border-border-secondary text-[10px] text-text-secondary font-mono pointer-events-none">
             Ctrl + K
@@ -70,12 +70,15 @@ export default function Navbar() {
         </button>
 
         {/* Date & Time Widget */}
-        <div className="hidden lg:flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-surface-card border border-border-secondary">
+        <div className="hidden lg:flex items-center px-3.5 py-1.5 gap-2.5 rounded-xl bg-surface-card border border-border-secondary">
           <Calendar className="h-4 w-4 text-text-accent shrink-0" />
-          <div className="flex flex-col text-left leading-none">
+          <div className="flex flex-col leading-none gap-0.5">
             <span className="text-[11px] font-semibold text-text-primary tracking-tight">
               {formattedTime || "Sep 20, 2026, 1:43:19 PM"}
             </span>
+            <p className="text-[10px] text-text-muted tracking-tight">
+              Bangladesh Standard Time
+            </p>
           </div>
         </div>
 
