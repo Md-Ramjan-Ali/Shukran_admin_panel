@@ -44,7 +44,7 @@ export default function Sidebar() {
       >
         <div className="flex flex-col h-full w-full overflow-hidden">
           {/* Brand Header — Fixed h-20 height matching Navbar */}
-          <div className="h-20 flex items-center border-b border-border-primary px-4 shrink-0">
+          <div className="h-20 flex items-center p-5 gap-3.5 self-stretch border-b border-border-primary shrink-0">
             <Link
               href="/dashboard"
               onClick={handleNavClick}

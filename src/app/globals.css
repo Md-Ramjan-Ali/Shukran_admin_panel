@@ -38,7 +38,7 @@
 
 :root {
   --surface-main: #0A0C10;
-  --surface-sidebar: #0D0F14;
+  --surface-sidebar: #12161E;
   --surface-card: #12151D;
   --surface-hover: #141720;
   --surface-accent: #F5B800;
@@ -49,7 +49,7 @@
   --text-accent: #F5B800;
   --text-inverse: #0A0C10;
 
-  --border-primary: #171B24;
+  --border-primary: #181C24;
   --border-secondary: #1E2330;
   --border-accent: #F5B800;
 
@@ -60,7 +60,7 @@
 
 .dark {
   --surface-main: #0A0C10;
-  --surface-sidebar: #0D0F14;
+  --surface-sidebar: #12161E;
   --surface-card: #12151D;
   --surface-hover: #141720;
   --surface-accent: #F5B800;
@@ -71,7 +71,7 @@
   --text-accent: #F5B800;
   --text-inverse: #0A0C10;
 
-  --border-primary: #171B24;
+  --border-primary: #181C24;
   --border-secondary: #1E2330;
   --border-accent: #F5B800;
 
@@ -93,12 +93,6 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1, "dlig" 1;
-  }
-}
-
-@layer utilities {
-  .glass {
-    @apply bg-background/60 backdrop-blur-md border border-white/20;
   }
 }
 

@@ -1,10 +1,8 @@
-import {
-  LayoutGrid,
-  LucideIcon,
-} from "lucide-react";
+import { ElementType } from "react";
+import { IoMdHome } from "react-icons/io";
 
 export interface NavItem {
-  icon: LucideIcon;
+  icon: ElementType;
   label: string;
   href: string;
   badge?: string | number;
@@ -12,7 +10,7 @@ export interface NavItem {
 
 export const SIDEBAR_ITEMS: NavItem[] = [
   {
-    icon: LayoutGrid,
+    icon: IoMdHome,
     label: "Dashboard",
     href: "/dashboard",
   },
