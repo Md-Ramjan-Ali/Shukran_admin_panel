@@ -14,6 +14,7 @@ import { TablePagination } from "./TablePagination";
 
 export interface Column<T> {
   header: string;
+  headerRender?: () => ReactNode;
   accessor?: keyof T;
   render?: (item: T) => ReactNode;
   headerClassName?: string;
@@ -35,6 +36,7 @@ interface DataTableProps<T> {
   currentPage?: number;
   totalItems?: number;
   itemsPerPage?: number;
+  itemLabel?: string;
   onPageChange?: (page: number) => void;
 }
 
@@ -52,18 +54,19 @@ export function DataTable<T>({
   currentPage = 1,
   totalItems = 0,
   itemsPerPage = 10,
+  itemLabel = "items",
   onPageChange,
 }: DataTableProps<T>) {
   return (
-    <div className={cn("flex w-full flex-col gap-4", className)}>
+    <div className={cn("flex w-full flex-col", className)}>
       <div
         className={cn(
-          "w-full overflow-hidden rounded-[28px] border border-[#F0E4E2] dark:border-white/10 bg-[#FFF9F8]/90 dark:bg-white/5 p-3 sm:p-5 shadow-[0_4px_20px_rgba(140,85,80,0.05)]",
+          "w-full overflow-hidden rounded-2xl border border-border-primary bg-surface-card",
           tableClassName,
         )}
       >
         {title && (
-          <h2 className="text-xl font-semibold text-[#62443D] dark:text-[#FAF5F4] p-2">
+          <h2 className="text-xl font-semibold text-text-primary px-5 pt-5 pb-2">
             {title}
           </h2>
         )}
@@ -71,17 +74,17 @@ export function DataTable<T>({
         <div className="overflow-x-auto">
           <Table className="w-full">
             <TableHeader>
-              <TableRow className="border-[#F0E4E2] dark:border-white/10 hover:bg-transparent">
+              <TableRow className="border-border-primary hover:bg-transparent">
                 {columns.map((column, index) => (
                   <TableHead
                     key={index}
                     className={cn(
-                      "h-auto px-3 sm:px-5 py-4 text-sm font-semibold whitespace-nowrap text-[#62443D] dark:text-[#FAF5F4]",
+                      "h-auto px-3 sm:px-5 py-4 text-xs font-semibold whitespace-nowrap text-text-muted uppercase tracking-wider",
                       column.hideOnMobile && "hidden md:table-cell",
                       column.headerClassName,
                     )}
                   >
-                    {column.header}
+                    {column.headerRender ? column.headerRender() : column.header}
                   </TableHead>
                 ))}
               </TableRow>
@@ -91,7 +94,7 @@ export function DataTable<T>({
                 <TableRow className="hover:bg-transparent">
                   <TableCell
                     colSpan={columns.length}
-                    className="h-24 text-center text-[#80635D] dark:text-[#A79896]"
+                    className="h-24 text-center text-text-muted"
                   >
                     {emptyMessage}
                   </TableCell>
@@ -104,11 +107,11 @@ export function DataTable<T>({
                     <TableRow
                       key={getRowKey(item)}
                       className={cn(
-                        "border-[#F6EBE9] dark:border-white/5 transition-colors",
+                        "border-border-primary transition-colors",
                         onRowClick && "cursor-pointer",
                         selected
-                          ? "bg-[#F3DDD9] dark:bg-white/10"
-                          : "hover:bg-[#FBF6F5] dark:hover:bg-white/5",
+                          ? "bg-surface-hover"
+                          : "hover:bg-surface-hover/60",
                       )}
                       onClick={() => onRowClick?.(item)}
                       data-state={selected ? "selected" : undefined}
@@ -117,7 +120,7 @@ export function DataTable<T>({
                         <TableCell
                           key={index}
                           className={cn(
-                            "px-3 sm:px-5 py-4 text-sm whitespace-nowrap text-[#62443D] dark:text-[#D5C6C4]",
+                            "px-3 sm:px-5 py-4 text-sm whitespace-nowrap text-text-secondary",
                             column.hideOnMobile && "hidden md:table-cell",
                             column.cellClassName,
                           )}
@@ -136,16 +139,20 @@ export function DataTable<T>({
             </TableBody>
           </Table>
         </div>
-      </div>
 
-      {showPagination && totalItems > 0 && onPageChange && (
-        <TablePagination
-          currentPage={currentPage}
-          totalItems={totalItems}
-          itemsPerPage={itemsPerPage}
-          onPageChange={onPageChange}
-        />
-      )}
+        {/* Pagination — inside the card */}
+        {showPagination && totalItems > 0 && onPageChange && (
+          <div className="border-t border-border-primary px-5 py-3">
+            <TablePagination
+              currentPage={currentPage}
+              totalItems={totalItems}
+              itemsPerPage={itemsPerPage}
+              itemLabel={itemLabel}
+              onPageChange={onPageChange}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function DashboardLayout({
         <Navbar />
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden p-2 bg-surface-main overscroll-y-contain [webkit-overflow-scrolling:touch]">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6 bg-surface-main overscroll-y-contain [webkit-overflow-scrolling:touch]">
           <div className="animate-in fade-in duration-300">{children}</div>
         </main>
       </div>

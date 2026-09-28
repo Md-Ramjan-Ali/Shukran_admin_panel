@@ -1,23 +1,37 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
+import { Plus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface AddBtnProps {
   text: string;
-  icon?: ReactNode; 
+  icon?: ReactNode;
   onClick?: () => void;
-  className?: string; 
+  className?: string;
 }
 
-const AddBtn: React.FC<AddBtnProps> = ({ text, icon, onClick, className = "" }) => {
+const AddBtn: React.FC<AddBtnProps> = ({
+  text,
+  icon,
+  onClick,
+  className = "",
+}) => {
   return (
     <button
       onClick={onClick}
-      className={`inline-flex items-center justify-center gap-2 px-6 py-2.5 
-      bg-[#4285F4] hover:bg-[#3378e8] text-white font-medium rounded-xl 
-      transition-all duration-200 active:scale-95 shadow-sm ${className} cursor-pointer`}
+      className={cn(
+        "inline-flex items-center justify-center gap-2 px-5 py-2.5",
+        "bg-surface-accent hover:bg-surface-accent/90 text-text-inverse",
+        "font-semibold text-sm rounded-xl transition-all duration-200",
+        "active:scale-95 shadow-sm cursor-pointer",
+        className,
+      )}
     >
-      {icon && <span className="flex items-center justify-center">{icon}</span>}
-      
-      <span className="text-[16px] whitespace-nowrap">{text}</span>
+      {icon ? (
+        <span className="flex items-center justify-center">{icon}</span>
+      ) : (
+        <Plus className="w-4 h-4" />
+      )}
+      <span className="whitespace-nowrap">{text}</span>
     </button>
   );
 };

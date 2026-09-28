@@ -36,17 +36,17 @@ export const ActionDropdown: React.FC<ActionDropdownProps> = ({
 }) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="p-1.5 hover:bg-accent rounded-lg transition-colors text-muted-foreground hover:text-foreground hover:cursor-pointer outline-none flex items-center justify-center">
+      <DropdownMenuTrigger className="p-1.5 hover:bg-surface-hover rounded-lg transition-colors text-text-muted hover:text-text-primary hover:cursor-pointer outline-none flex items-center justify-center">
         {trigger || <EllipsisVertical className="w-5 h-5" />}
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
         align={align}
-        className="w-48 bg-card rounded-xl shadow-xl border border-border py-1 text-card-foreground"
+        className="w-48 bg-surface-card rounded-xl shadow-xl border border-border-primary py-1 text-text-primary"
       >
         {title && (
           <DropdownMenuGroup>
-            <DropdownMenuLabel className="px-4 py-2 text-base font-bold text-muted-foreground capitalize tracking-wider text-left">
+            <DropdownMenuLabel className="px-4 py-2 text-xs font-bold text-text-muted uppercase tracking-wider text-left">
               {title}
             </DropdownMenuLabel>
           </DropdownMenuGroup>
@@ -55,12 +55,12 @@ export const ActionDropdown: React.FC<ActionDropdownProps> = ({
         {items.map((item, index) => (
           <React.Fragment key={index}>
             {item.showDivider && (
-              <DropdownMenuSeparator className="my-1 border-t border-border" />
+              <DropdownMenuSeparator className="my-1 border-t border-border-primary" />
             )}
             <DropdownMenuItem
               onClick={item.onClick}
               disabled={item.disabled}
-              className={`flex items-center justify-between w-full gap-3 px-4 py-2 text-sm transition-colors cursor-pointer focus:bg-accent focus:text-accent-foreground outline-none disabled:opacity-50 disabled:cursor-not-allowed ${item.className || "text-foreground/80 hover:text-foreground"}`}
+              className={`flex items-center justify-between w-full gap-3 px-4 py-2 text-sm transition-colors cursor-pointer focus:bg-surface-hover outline-none disabled:opacity-50 disabled:cursor-not-allowed ${item.className || "text-text-secondary hover:text-text-primary"}`}
             >
               <span>{item.label}</span>
               {item.icon && (
