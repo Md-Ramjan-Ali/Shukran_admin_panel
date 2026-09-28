@@ -80,7 +80,7 @@ export default function Sidebar() {
                       href={item.href}
                       onClick={handleNavClick}
                       className={cn(
-                        "flex items-center justify-between px-3.5 py-2.5 rounded-sm transition-all duration-150 group w-full text-[13.5px]",
+                        "flex items-center justify-between px-3.5 py-2.5 rounded-sm transition-all duration-100 group w-full text-[13.5px]",
                         isActive
                           ? "bg-surface-accent text-text-inverse font-semibold shadow-xs"
                           : "text-text-secondary hover:bg-surface-hover hover:text-text-primary font-normal",

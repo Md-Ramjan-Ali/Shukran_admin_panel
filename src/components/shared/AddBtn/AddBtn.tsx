@@ -21,7 +21,7 @@ const AddBtn: React.FC<AddBtnProps> = ({
       className={cn(
         "inline-flex items-center justify-center gap-2 px-5 py-2.5",
         "bg-surface-accent hover:bg-surface-accent/90 text-text-inverse",
-        "font-semibold text-sm rounded-xl transition-all duration-200",
+        "font-semibold text-sm rounded-sm transition-all duration-200",
         "active:scale-95 shadow-sm cursor-pointer",
         className,
       )}

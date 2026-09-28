@@ -10,6 +10,8 @@
   --color-surface-card: var(--surface-card);
   --color-surface-hover: var(--surface-hover);
   --color-surface-accent: var(--surface-accent);
+  --color-surface-input: var(--surface-input);
+  --color-surface-table-header: var(--surface-table-header);
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
@@ -20,6 +22,7 @@
   --color-border-primary: var(--border-primary);
   --color-border-secondary: var(--border-secondary);
   --color-border-accent: var(--border-accent);
+  --color-border-input: var(--border-input);
 
   --color-background: var(--surface-main);
   --color-foreground: var(--text-primary);
@@ -42,6 +45,8 @@
   --surface-card: #12151D;
   --surface-hover: #141720;
   --surface-accent: #FBBF24;
+  --surface-input: #0D1525;
+  --surface-table-header: #0C1220;
 
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
@@ -52,6 +57,7 @@
   --border-primary: #181C24;
   --border-secondary: #1E2330;
   --border-accent: #FBBF24;
+  --border-input: #1D2B44;
 
   --background: #0A0C10;
   --foreground: #F8FAFC;
@@ -64,6 +70,8 @@
   --surface-card: #12151D;
   --surface-hover: #141720;
   --surface-accent: #FBBF24;
+  --surface-input: #0D1525;
+  --surface-table-header: #0C1220;
 
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
@@ -74,6 +82,7 @@
   --border-primary: #181C24;
   --border-secondary: #1E2330;
   --border-accent: #FBBF24;
+  --border-input: #1D2B44;
 
   --background: #0A0C10;
   --foreground: #F8FAFC;

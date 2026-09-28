@@ -74,7 +74,7 @@ export function DataTable<T>({
         <div className="overflow-x-auto">
           <Table className="w-full">
             <TableHeader>
-              <TableRow className="border-border-primary hover:bg-transparent">
+              <TableRow className="border-border-primary hover:bg-transparent bg-surface-table-header">
                 {columns.map((column, index) => (
                   <TableHead
                     key={index}
@@ -142,7 +142,7 @@ export function DataTable<T>({
 
         {/* Pagination — inside the card */}
         {showPagination && totalItems > 0 && onPageChange && (
-          <div className="border-t border-border-primary px-5 py-3">
+          <div className="border-t border-border-primary px-5 py-3 bg-surface-table-header">
             <TablePagination
               currentPage={currentPage}
               totalItems={totalItems}

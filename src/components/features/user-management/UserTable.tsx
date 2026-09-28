@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Pencil, Trash2 } from "lucide-react";
+import { Eye, Pencil, KeyRound, ShieldOff, Trash2 } from "lucide-react";
 import { DataTable, Column } from "@/components/shared/DataTable/DataTable";
 import { ActionDropdown } from "@/components/shared/ActionDropdown/ActionDropdown";
 import { UserItem, MOCK_USERS } from "./data";
@@ -115,21 +115,37 @@ export default function UserTable({
     {
       header: "Actions",
       render: (item) => (
-        <div className="flex justify-end">
+        <div className="flex justify-center">
           <ActionDropdown
             title="User Actions"
             items={[
               {
-                label: "Edit User",
+                label: "View Details",
+                icon: <Eye className="w-3.5 h-3.5" />,
+                onClick: () => console.log("View", item.id),
+              },
+              {
+                label: "Update User",
                 icon: <Pencil className="w-3.5 h-3.5" />,
-                onClick: () => console.log("Edit", item.id),
+                onClick: () => console.log("Update", item.id),
+              },
+              {
+                label: "Reset Password",
+                icon: <KeyRound className="w-3.5 h-3.5" />,
+                onClick: () => console.log("Reset Password", item.id),
+              },
+              {
+                label: "Suspend User",
+                icon: <ShieldOff className="w-3.5 h-3.5" />,
+                onClick: () => console.log("Suspend", item.id),
+                className: "text-text-accent hover:text-text-accent/80",
+                showDivider: true,
               },
               {
                 label: "Delete User",
                 icon: <Trash2 className="w-3.5 h-3.5" />,
                 onClick: () => console.log("Delete", item.id),
                 className: "text-red-400 hover:text-red-300",
-                showDivider: true,
               },
             ]}
           />
