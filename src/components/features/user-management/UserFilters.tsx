@@ -40,7 +40,7 @@ export default function UserFilters({
         <select
           value={branch}
           onChange={(e) => onBranchChange(e.target.value)}
-          className="py-[10px] pl-8 pr-9 bg-surface-input border border-border-input rounded-lg text-xs text-text-secondary focus:outline-none focus:border-border-accent/60 transition-colors cursor-pointer appearance-none"
+          className="py-2.5 pl-8 pr-9 bg-surface-input border border-border-input rounded-lg text-xs text-text-secondary focus:outline-none focus:border-border-accent/60 transition-colors cursor-pointer appearance-none"
         >
           <option value="">All Branches</option>
           <option value="SOHRA BRANCH">Sohra Branch</option>
@@ -58,7 +58,7 @@ export default function UserFilters({
         <select
           value={role}
           onChange={(e) => onRoleChange(e.target.value)}
-          className="py-[10px] pl-8 pr-9 bg-surface-input border border-border-input rounded-lg text-xs text-text-secondary focus:outline-none focus:border-border-accent/60 transition-colors cursor-pointer appearance-none"
+          className="py-2.5 pl-8 pr-9 bg-surface-input border border-border-input rounded-lg text-xs text-text-secondary focus:outline-none focus:border-border-accent/60 transition-colors cursor-pointer appearance-none"
         >
           <option value="">All Roles</option>
           <option value="ADMIN">Admin (Super Admin)</option>
