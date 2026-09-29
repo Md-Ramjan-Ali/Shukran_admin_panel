@@ -133,13 +133,14 @@ export default function Sidebar() {
                     </p>
                   </div>
                 </div>
-                <button
-                  type="button"
+                <Link
+                  href="/settings"
+                  onClick={handleNavClick}
                   className="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-hover transition-colors cursor-pointer"
                   title="Settings"
                 >
                   <Settings className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
