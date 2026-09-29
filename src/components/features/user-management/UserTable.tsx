@@ -28,8 +28,7 @@ export default function UserTable({
 }: UserTableProps) {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
-  const isAllSelected =
-    data.length > 0 && selectedIds.length === data.length;
+  const isAllSelected = data.length > 0 && selectedIds.length === data.length;
   const isSomeSelected =
     selectedIds.length > 0 && selectedIds.length < data.length;
 
@@ -43,7 +42,7 @@ export default function UserTable({
 
   const toggleSelectRow = (id: string) => {
     setSelectedIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
     );
   };
 
@@ -69,7 +68,9 @@ export default function UserTable({
     {
       header: "#",
       render: (item) => (
-        <span className="text-text-muted text-xs font-medium">{item.serial}</span>
+        <span className="text-text-muted text-xs font-medium">
+          {item.serial}
+        </span>
       ),
       headerClassName: "w-10",
       cellClassName: "w-10",
